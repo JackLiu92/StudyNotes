@@ -1,6 +1,8 @@
 ### 数据结构与算法学习笔记
 #### Leetcode
 
+[**20 Valid Parentheses**](#20)
+
 [**83 Remove Duplicates from Sorted List**](#83)
 
 [**141 Linked List Cycle**](#141)
@@ -14,6 +16,28 @@
 [**509 Fibonacci Number**](#509)
 
 [**876 Middle of the Linked List**](#876)
+
+
+##### <a name="20"></a>20 Valid Parentheses
+
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null || head.next == null) return head;
+        
+        head.next = deleteDuplicates(head.next);
+        return (head.val == head.next.val ? head.next : head);
+    }
+}
+```
 
 ##### <a name="83"></a>83 Remove Duplicates from Sorted List
 
